@@ -1,0 +1,79 @@
+\begin{challenge}
+    \chatitle{Exploring Specialized Containers in C++: \texttt{std::set}, \texttt{std::deque}, and \texttt{std::unordered\_multiset}}
+    \begin{chadescription}
+    In this challenge, you will explore three specialized containers provided by the C++ Standard Template Library (\texttt{std::set}, \texttt{std::deque}, and \texttt{std::unordered\_multiset}). 
+    Each container is designed for specific use cases, offering unique features and behaviors that make them well-suited for particular types of data management tasks.
+
+    \begin{itemize}
+        \item \texttt{std::set} is an ordered container that stores unique elements and automatically sorts them.
+        \item \texttt{std::deque} is a double-ended queue that allows efficient insertion and removal of elements at both the front and the back.
+        \item \texttt{std::unordered\_multiset} is an unordered container that allows multiple elements with the same value, stored in a hash table for fast lookups.
+    \end{itemize}
+
+    To complete this challenge, you are encouraged to use \href{https://en.cppreference.com/}{cppreference.com} to read about the specific properties and member functions of these containers. 
+    By the end, you will gain a deeper understanding of how and when to use these containers effectively.
+    \end{chadescription}
+
+    \begin{task}
+        Write a program using \texttt{std::set} to manage a collection of unique integers:
+        \begin{enumerate}
+            \item Declare an \texttt{std::set} and add the integers \texttt{5, 10, 5, 20, 15}.
+            \item Print all elements of the set using a range-based \texttt{for} loop.
+            \item Check if the value \texttt{10} exists in the set using \texttt{find()} and print an appropriate message.
+            \item Remove the value \texttt{15} from the set using \texttt{erase()} and print the updated set.
+        \end{enumerate}
+
+        Save your program and run it to ensure the output matches your expectations.
+
+        \begin{questions}
+            \item What happens when you try to add duplicate values to an \texttt{std::set}? Why?
+            \item How does the automatic sorting of elements in \texttt{std::set} simplify iteration and searching?
+            \item Why is \texttt{std::set} not the right choice for storing duplicate values?
+        \end{questions}
+    \end{task}
+
+    \begin{task}
+        Write a program using \texttt{std::deque} to simulate a task scheduling system:
+        \begin{enumerate}
+            \item Declare an \texttt{std::deque} to store strings representing task names.
+            \item Add tasks \texttt{"Task1"} and \texttt{"Task2"} to the back of the deque using \texttt{push\_back()}.
+            \item Add the task \texttt{"UrgentTask"} to the front of the deque using \texttt{push\_front()}.
+            \item Remove tasks as they are completed, starting from the front, using \texttt{pop\_front()}, and print the remaining tasks after each removal.
+        \end{enumerate}
+
+        Save your program, compile it, and ensure it runs correctly.
+
+        \begin{questions}
+            \item Why is \texttt{std::deque} well-suited for applications like task scheduling?
+            \item How does \texttt{std::deque}'s ability to add and remove elements at both ends compare to \texttt{std::vector} and \texttt{std::list}?
+            \item What happens if you try to access an element of the deque after it has been removed?
+        \end{questions}
+    \end{task}
+
+    \begin{task}
+        Write a program using \texttt{std::unordered\_multiset} to count word frequencies, allowing duplicates:
+        \begin{enumerate}
+            \item Declare an \texttt{std::unordered\_multiset} to store words as strings.
+            \item Add the words \texttt{"apple", "banana", "apple", "orange", "banana", "apple"} to the container.
+            \item Use the \texttt{count()} function to determine how many times the word \texttt{"apple"} appears in the multiset.
+            \item Iterate through the multiset using a range-based \texttt{for} loop to print each unique word and its frequency.
+        \end{enumerate}
+
+        Save your program, compile it, and ensure it runs correctly. Think carefully about how duplicates are handled in this container.
+
+        \begin{questions}
+            \item How does \texttt{std::unordered\_multiset} differ from \texttt{std::set} in terms of handling duplicates?
+            \item Why is the \texttt{count()} function useful in a multiset? How would you achieve the same functionality with a regular array?
+            \item What are the advantages of \texttt{std::unordered\_multiset}'s hash-based storage compared to a sorted container like \texttt{std::set}?
+        \end{questions}
+    \end{task}
+
+    \begin{advise}
+        Each of these specialized containers offers unique features and advantages for different types of problems. 
+        \texttt{std::set} ensures uniqueness and provides automatic sorting, making it ideal for ordered collections without duplicates. 
+        \texttt{std::deque} is perfect for double-ended operations where both insertion and removal are frequent at either end. 
+        \texttt{std::unordered\_multiset} allows duplicates and provides fast lookups, making it an excellent choice for counting or grouping repeated elements. 
+        By using \href{https://en.cppreference.com/}{cppreference.com}, you can explore additional member functions and refine your understanding of when to use these containers. 
+        With practice, these tools will become valuable assets in solving diverse programming challenges.
+    \end{advise}
+\end{challenge}
